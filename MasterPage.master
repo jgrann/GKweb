@@ -1,0 +1,64 @@
+<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="generator" content="Microsoft Visual Studio, see http://msdn.microsoft.com/vstudio/" />
+    <meta name="Keywords" content="Grann, Konsulent, EDM, Programmering" />
+    <meta name="Description" content="Grann Konsult leverer konsulenttjenester innen IT" />
+    <meta name="copyright" content="Copyright (c) 2008 Grann Konsult" />
+    <link href="App_Themes/Standard/css-content.css" rel="stylesheet" type="text/css" media="interactive, braille, emboss, handheld, projection, screen, tty, tv" />
+    <link href="App_Themes/css-print.css" rel="stylesheet" type="text/css" media="print" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>Grann Konsult</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+        <!--
+
+TOP INFORMTION
+
+-->
+        <div id="top-information">
+            <div id="logo">
+                <a href="Default.aspx"><img src="images/GKlogo.gif" 
+                    style="height: 41px; width: 198px;" alt="Grann Konsult" /></a></div>
+            <div id="top-information-home">
+                <a href="Default.aspx">Hjem</a></div>
+            <div id="top-information-phone">
+                +47 97140527<br />
+                jan.erik@grann.no</div>
+        </div>
+        <!--
+
+TOP NAV
+
+-->
+        <div class="none"></div>
+        <div id="nav-main">
+               <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal"
+                 Width="200px" CssClass="menu-main" MaximumDynamicDisplayLevels="0" StaticSelectedStyle-CssClass="StaticSelectedStyle" />
+            <div>
+                &nbsp;</div>
+        </div>
+        <a id="maincontent"></a>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <!--
+
+FOOTER
+
+-->
+        <div id="footer">
+            Copyright © 2008 Grann Konsult.
+            <div>
+                &nbsp;</div>
+        </div>
+        <div id="footer-sub">
+            <asp:Menu ID="Menu2" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal"
+                Width="200px" CssClass="menu-main" MaximumDynamicDisplayLevels="0" />
+        </div>
+    </form>
+</body>
+</html>
